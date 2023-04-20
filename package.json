@@ -1,6 +1,15 @@
 {
-  "name": "themeswitcher",
+  "name": "themeswitcher-eslint",
   "version": "0.1.0",
+  "author": {
+    "name": "Felipe Seabra",
+    "email": "contato@felipeseabra.dev.br",
+    "url": "https://felipeseabra.dev.br/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/felipe-seabra/criarte-new-website"
+  },
   "private": true,
   "dependencies": {
     "@emailjs/browser": "^3.11.0",
