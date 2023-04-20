@@ -1,8 +1,8 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const Container = styled.div`
   height: 70px;
-  background: ${props => props.theme.colors.primary}};
+  background: ${(props) => props.theme.colors.primary}};
   padding: 0 30px;
 
   .header__logo {
@@ -26,7 +26,7 @@ export const Container = styled.div`
   }
 
   .navlink:hover {
-    color: ${props => props.theme.colors.secundary} !important;
+    color: ${(props) => props.theme.colors.secundary} !important;
     transform: scale(1.1);
   }
 
@@ -37,7 +37,7 @@ export const Container = styled.div`
     height: 3px;
     bottom: 0;
     left: 0;
-    background-color: ${props => props.theme.colors.secundary};
+    background-color: ${(props) => props.theme.colors.secundary};
     visibility: hidden;
     -webkit-transform: scaleX(0);
     transform: scaleX(0);
@@ -52,7 +52,7 @@ export const Container = styled.div`
   }
 
   .navlink.active {
-    color: ${props => props.theme.colors.secundary} !important;
+    color: ${(props) => props.theme.colors.secundary} !important;
     transform: scale(1.1);
   }
 

@@ -1,19 +1,19 @@
-import React, { useContext, useState, useEffect } from "react";
+import React, { useContext, useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import Switch from 'react-switch'
-import { ThemeContext } from "styled-components";
-import { shade } from "polished";
+import Switch from 'react-switch';
+import { ThemeContext } from 'styled-components';
+import { shade } from 'polished';
 
-import { Container } from './styles'
+import { Container } from './styles';
 
 interface Props {
   toggleTheme(): void;
 }
 
 const NAV_LINKS = [
-  { path: '/', label: 'Login' },
+  { path: '/', label: 'Login' }
   // { path: '/about', label: 'Sobre' },
   // { path: '/projects', label: 'Projetos' },
   // { path: '/contact', label: 'Contato' },
@@ -28,7 +28,6 @@ const Header: React.FC<Props> = ({ toggleTheme }) => {
     setActiveLink(location.pathname);
   }, [location]);
 
-
   return (
     <header>
       <Container>
@@ -42,14 +41,13 @@ const Header: React.FC<Props> = ({ toggleTheme }) => {
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="container header__links">
-              {NAV_LINKS.map((link, index) => (
+              {NAV_LINKS.map((link) => (
                 <Nav.Link
-                  key={index}
+                  key={link.path}
                   as={Link}
                   to={link.path}
                   className="navlink"
-                  active={activeLink === link.path}
-                >
+                  active={activeLink === link.path}>
                   {link.label}
                 </Nav.Link>
               ))}

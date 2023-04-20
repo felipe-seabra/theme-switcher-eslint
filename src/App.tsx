@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { ThemeProvider } from 'styled-components'
+import { ThemeProvider } from 'styled-components';
+import { BrowserRouter } from 'react-router-dom';
 import usePresistedState from './utils/usePersistedState';
 
 import light from './styles/themes/light';
@@ -9,25 +10,24 @@ import GlobalStyle from './styles/global';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Content from './components/Content';
-import { BrowserRouter } from 'react-router-dom';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-const App = () => {
+function App() {
   const [persisted, setPersisted] = usePresistedState(dark.title);
-  const[theme, setTheme] = useState(persisted === 'light' ? light : dark)
+  const [theme, setTheme] = useState(persisted === 'light' ? light : dark);
 
   const toggleTheme = () => {
-    setTheme(persisted === 'light' ? dark : light)
-    setPersisted(persisted === 'light' ? dark.title : light.title)
+    setTheme(persisted === 'light' ? dark : light);
+    setPersisted(persisted === 'light' ? dark.title : light.title);
   };
 
   return (
     <BrowserRouter>
-      <ThemeProvider theme={ theme }>
+      <ThemeProvider theme={theme}>
         <div className="App">
           <GlobalStyle />
-          <Header toggleTheme={toggleTheme}/>
+          <Header toggleTheme={toggleTheme} />
           <main>
             <Content />
           </main>

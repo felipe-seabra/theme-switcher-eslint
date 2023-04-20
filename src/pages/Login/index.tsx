@@ -1,12 +1,12 @@
-import React from "react";
+import React from 'react';
 
-import { Container } from './styles'
+import { Container } from './styles';
 
 const Login: React.FC = () => {
   const [email, setEmail] = React.useState('');
   const [password, setPassword] = React.useState('');
 
-  const  verifyBtn = () => {
+  const verifyBtn = () => {
     const MIN_LENGTH = 6;
     const emailRegex = /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
 
@@ -23,7 +23,9 @@ const Login: React.FC = () => {
             placeholder="E-mail"
             data-testid="email-input"
             name="email"
-            onChange={(e) => { setEmail(e.target.value) }}
+            onChange={(e) => {
+              setEmail(e.target.value);
+            }}
             value={email}
           />
           <input
@@ -31,16 +33,14 @@ const Login: React.FC = () => {
             placeholder="Senha"
             data-testid="password-input"
             name="password"
-            onChange={(e) => { setPassword(e.target.value) }}
+            onChange={(e) => {
+              setPassword(e.target.value);
+            }}
             value={password}
           />
         </section>
         <div className="link">
-          <button
-            type="button"
-            onClick={() => { console.log('clicou') }}
-            disabled={verifyBtn()}
-          >
+          <button type="button" disabled={verifyBtn()}>
             Entrar
           </button>
         </div>
