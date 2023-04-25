@@ -10,6 +10,12 @@
     "type": "git",
     "url": "https://github.com/felipe-seabra/themeswitcher-eslint"
   },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "prepare-commit-msg": "exec < /dev/tty && npx cz --hook || true"
+    }
+  },
   "private": true,
   "dependencies": {
     "@emailjs/browser": "^3.11.0",
@@ -56,12 +62,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "husky": {
-    "hooks": {
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
-      "prepare-commit-msg": "exec < /dev/tty && npx cz --hook || true"
-    }
   },
   "devDependencies": {
     "@commitlint/cli": "^17.6.0",
