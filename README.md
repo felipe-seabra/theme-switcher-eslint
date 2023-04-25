@@ -7,13 +7,13 @@ Este projeto consiste em um componente React que permite aos usuários alternar 
 Clone o projeto
 
 ```bash
-  git clone git@github.com:felipe-seabra/theme-switcher-boilerplate.git
+  git clone git@github.com:felipe-seabra/themeswitcher-eslint.git
 ```
 
 Entre no diretório do projeto
 
 ```bash
-  cd theme-switcher-boilerplate
+  cd themeswitcher-eslint
 ```
 
 Instale as dependências
@@ -27,5 +27,8 @@ Inicie o servidor
 ```bash
   npm start
 ```
+## Demonstração
+
+![Vídeo demo](/images/demo.gif)
 
 © Desenvolvido por [Felipe Seabra](https://www.linkedin.com/in/felipe-seabra/) 
