@@ -19,7 +19,7 @@ const NAV_LINKS = [
   // { path: '/contact', label: 'Contato' },
 ];
 
-const Header: React.FC<Props> = ({ toggleTheme }) => {
+function Header({ toggleTheme }: Props): JSX.Element {
   const location = useLocation();
   const { colors, title } = useContext(ThemeContext);
   const [activeLink, setActiveLink] = useState('/');
@@ -68,6 +68,6 @@ const Header: React.FC<Props> = ({ toggleTheme }) => {
       </Container>
     </header>
   );
-};
+}
 
 export default Header;
