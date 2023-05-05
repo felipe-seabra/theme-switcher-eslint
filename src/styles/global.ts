@@ -15,7 +15,7 @@ export default createGlobalStyle`
   }
 
   main {
-    height: 85vh;
+    height: 80vh;
     display: flex;
     justify-content: center;
     align-items: center;
