@@ -1,9 +1,17 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  height: 70px;
+  position: absolute;
+  width: 100%;
+  padding-left: 30px;
+  text-align: right;
+  padding-right: ${window.matchMedia('(max-width: 768px)').matches ? '2em' : '30px'};
   background: ${(props) => props.theme.colors.primary}};
-  padding: 0 30px;
+  z-index: 999;
+
+  header {
+    height: 12.5vh;
+  }
 
   .header__logo {
     font-size: 1.5em;
@@ -15,14 +23,16 @@ export const Container = styled.div`
 
   .header__links {
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     justify-content: flex-end;
-    padding-right: 2em;
+    padding-right: ${window.matchMedia('(max-width: 768px)').matches ? '0' : '2em'};
     font-size: 1.2em;
   }
 
   .navlink {
-    color: #fff;
+    color: ${(props) => props.theme.colors.text};
+    text-transform: uppercase;
+    transition: transform 0.4s;
   }
 
   .navlink:hover {
@@ -61,9 +71,15 @@ export const Container = styled.div`
     -webkit-transform: scaleX(1);
     transform: scaleX(1);
   }
-}
 
-nav .navbar-toggler-icon {
-  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+  .navbar-toggler {
+    background: ${(props) => props.theme.colors.secundary};
+    opacity: 0.5;
+    transition: 0.4s;
+  }
+  
+  .navbar-toggler:hover {
+    opacity: 1;
+  }
 }
 `;
