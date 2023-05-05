@@ -5,7 +5,6 @@ type Response<T> = [T, Dispatch<SetStateAction<T>>];
 
 function usePresistedState(key: string): Response<string> {
   const [state, setState] = useState(() => {
-    // const storageValue = localStorage.getItem(key);
     const cookies = parseCookies();
 
     if (cookies.USER_THEME) {
@@ -15,7 +14,6 @@ function usePresistedState(key: string): Response<string> {
   });
 
   useEffect(() => {
-    // localStorage.setItem(key, JSON.stringify(state));
     setCookie(null, 'USER_THEME', state, {
       maxAge: 30 * 24 * 60 * 60,
       path: '/'
